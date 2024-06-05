@@ -7,10 +7,11 @@ from urllib3 import disable_warnings
 
 disable_warnings(InsecureRequestWarning)
 
-app = Flask(__name__)
-CORS(app, origins=['*'])
+
 
 def crear_app():
+    app = Flask(__name__)
+    CORS(app, origins=['*'])
 
     @app.route("/api/obtener-signos")
     def getSignos():
